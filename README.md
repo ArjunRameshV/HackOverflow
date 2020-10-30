@@ -1,6 +1,6 @@
 # HackOverflow
 
-## make a folder input inside static
+## make a folder "input" inside static
 
 The images will appear in the folder : static/input 
 
