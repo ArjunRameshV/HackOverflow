@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HACKATHON</title>
+</head>
+<h2 style="text-align:center">{{heading}}</h2>
+<style>
+    body {
+      background-color: black;
+    }   
+    h2 {
+      border-left: 6px solid red;
+      border-width: 20px;
+      border-color: white;
+    }
+  </style>
+<div style="text-align:center">
+    <form  style="float: right">
+          <input style="height:30px;font-size:15pt;" type="submit" value="back" formaction="http://localhost:5000/">
+         </form>
+{% if results %}
+
+            <div>
+            {% for img_name in results %}
+ 
+                    	<img src={{img_name}} alt="{{ img_name }}">
+
+            {% endfor %}
+        </div>
+
+    {% endif %} 
+
+</html>

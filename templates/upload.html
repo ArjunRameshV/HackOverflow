@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+
+  <style>
+    body {
+      background-image: url("static/images1/6.jpg");
+      background-color: black;
+    }
+    h2 {
+      border-left: 6px solid red;
+      border-width: 20px;
+      border-color: white;
+    }
+  </style>
+  <body>
+    <h1 style="color: white; font-size: 100px; text-align: center">
+      UNDER WATER GATE DETECTION
+    </h1>
+    <form
+      id="imageUploadForm"
+      role="form"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div style="text-align: center">
+        <input
+          style="height: 200px; font-size: 20pt; color: black"
+          type="file"
+          id="fileup"
+          name="files"
+          onchange="showPreview(event);"
+        />
+        <!-- <div class="center">
+          <div class="form-input">
+            <label for="file-ip-1">Upload Image</label>
+            <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+            <div class="preview">
+              <img id="fileup">
+            </div>
+          </div>
+        </div> -->
+        <div class="preview">
+          <img id="fileip">
+        </div>
+        <!-- <input type='file' onchange="readURL(this);" /> -->
+        <!-- <img id="blah" src="http://placehold.it/180" alt="your image" /> -->
+      </div>
+      <div style="text-align: center">
+        <input
+          style="height: 30px; font-size: 15pt"
+          value="Upload the Image"
+          type="submit"
+          formaction="http://localhost:5000/upload"
+        />
+      </div>
+    </form>
+    <div id="uploadResponse"></div>
+    <!-- <script>
+      function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script> -->
+    <script>
+      function showPreview(event){
+  if(event.target.files.length > 0){
+    var src = URL.createObjectURL(event.target.files[0]);
+    var preview = document.getElementById("fileip");
+    preview.src = src;
+    preview.style.display = "block";
+  }
+}
+    </script>
+    <div id="uploadResponse"></div>
+  </body>
+</html>
